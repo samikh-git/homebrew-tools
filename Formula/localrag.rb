@@ -101,9 +101,11 @@ class Localrag < Formula
       # Install hatchling from PyPI (will use wheel, avoiding build dependency issues)
       system "#{libexec}/bin/python", "-m", "pip", "install", "hatchling"
       
-      # Install all resources
+      # Install all resources with --no-build-isolation to use already-installed hatchling
       resources.each do |r|
-        venv.pip_install r
+        r.stage do
+          system "#{libexec}/bin/python", "-m", "pip", "install", "--no-build-isolation", "-v", "."
+        end
       end
       
       # Install the main package
