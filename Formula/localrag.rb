@@ -11,23 +11,6 @@ class Localrag < Formula
   
     depends_on "python@3.12"
   
-    # --- BUILD DEPENDENCIES (must be installed first) ---
-    
-    resource "setuptools" do
-      url "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-75.0.0.tar.gz"
-      sha256 "25af69c809d9334cd8e653d385277abeb5a102dca255954005a7092d282575ea"
-    end
-    
-    resource "wheel" do
-      url "https://files.pythonhosted.org/packages/source/w/wheel/wheel-0.45.0.tar.gz"
-      sha256 "a57353941a3183b3d5365346b567a260a0602a0f8a635926a7dede41b94c674a"
-    end
-    
-    resource "hatchling" do
-      url "https://files.pythonhosted.org/packages/source/h/hatchling/hatchling-1.25.0.tar.gz"
-      sha256 "7064631a512610b52250a4d3ff1bd81551d6d1431c4eb7b72e734df6c74f4262"
-    end
-    
     # --- DEPENDENCIES ---
     
     resource "typer" do
@@ -111,14 +94,15 @@ class Localrag < Formula
       # Create virtualenv
       venv = virtualenv_create(libexec, "python3.12")
       
-      # Install build dependencies first (required for building packages from source)
-      venv.pip_install resource("setuptools")
-      venv.pip_install resource("wheel")
-      venv.pip_install resource("hatchling")
+      # Upgrade pip, setuptools, and wheel first (pip will use wheels automatically)
+      # This ensures build tools are available before building packages from source
+      system "#{venv.python}", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
       
-      # Install all other resources
+      # Install hatchling from PyPI (will use wheel, avoiding build dependency issues)
+      system "#{venv.python}", "-m", "pip", "install", "hatchling"
+      
+      # Install all resources
       resources.each do |r|
-        next if ["setuptools", "wheel", "hatchling"].include?(r.name)
         venv.pip_install r
       end
       
