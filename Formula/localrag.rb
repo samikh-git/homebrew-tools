@@ -96,10 +96,10 @@ class Localrag < Formula
       
       # Upgrade pip, setuptools, and wheel first (pip will use wheels automatically)
       # This ensures build tools are available before building packages from source
-      system "#{venv.bin}/python", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
+      system "#{libexec}/bin/python", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
       
       # Install hatchling from PyPI (will use wheel, avoiding build dependency issues)
-      system "#{venv.bin}/python", "-m", "pip", "install", "hatchling"
+      system "#{libexec}/bin/python", "-m", "pip", "install", "hatchling"
       
       # Install all resources
       resources.each do |r|
