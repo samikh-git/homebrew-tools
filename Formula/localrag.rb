@@ -9,7 +9,7 @@ class Localrag < Formula
     # The SHA256 you calculated earlier
     sha256 "d3b5e34010f49caacf45b50eb4975c15db94946deaa046518287bd634792868d" 
   
-    depends_on "python@3.12.12"
+    depends_on "python@3.12"
   
     # --- DEPENDENCIES ---
     
