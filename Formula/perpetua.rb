@@ -2,7 +2,7 @@ class Perpetua < Formula
     include Language::Python::Virtualenv
 
     desc "Perpetua is a python package that creates agents that are context aware of your codebase."
-    homepage "https://github.com/samikh-git/perpetua-docs"
+    homepage "https://perpetua-docs.vercel.app"
     url "https://files.pythonhosted.org/packages/88/f3/2d3d85abd4154c5bdefc736a854bc3a3911d3103d529530570fbeb039585/perpetua-0.1.3.tar.gz"
     sha256 "a35a942091db66753db84cf661175b8191b4cd522a2ccff27cfc52ba8c6465ad"
 
