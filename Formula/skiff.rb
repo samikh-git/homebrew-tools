@@ -1,8 +1,8 @@
 class Skiff < Formula
   desc "Progressive MCP / OpenAPI / GraphQL CLI for agents"
   homepage "https://github.com/samikh-git/skiff"
-  url "https://github.com/samikh-git/skiff/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "b143f8078d726b755fbbb155a1b44f3acac17a7814430c202455213c0d0fea25"
+  url "https://github.com/samikh-git/skiff/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "9889da28851d89f8553a300692057641d87cd31362237bba6d11f6f34b71163b"
   license "MIT"
   head "https://github.com/samikh-git/skiff.git", branch: "main"
 
