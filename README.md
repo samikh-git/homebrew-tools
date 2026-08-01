@@ -1,11 +1,23 @@
 # `homebrew-tools`: A Homebrew tap for samikh-git
 
-Homebrew tap for my projects. Currently, the following projects are added: 
+Homebrew tap for my projects.
 
-* `Perpetua`: read more [here](https://github.com/samikh-git/perpetua)
+## Packages
 
-  Install this package by running:
-  ```bash
-  brew tap samikh-git/tools
-  brew install perpetua
-  ```
+### Perpetua
+
+Read more [here](https://github.com/samikh-git/perpetua).
+
+```bash
+brew tap samikh-git/tools
+brew install perpetua
+```
+
+### skiff
+
+Progressive MCP / OpenAPI / GraphQL CLI for agents ([repo](https://github.com/samikh-git/skiff)).
+
+```bash
+brew tap samikh-git/tools
+brew install skiff
+```
