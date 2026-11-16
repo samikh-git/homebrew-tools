@@ -21,3 +21,12 @@ Progressive MCP / OpenAPI / GraphQL CLI for agents ([repo](https://github.com/sa
 brew tap samikh-git/tools
 brew install skiff
 ```
+
+### nbgpu
+
+Run local marimo notebooks on remote GPUs ([repo](https://github.com/samikh-git/nbgpu)).
+
+```bash
+brew tap samikh-git/tools
+brew install nbgpu
+```
